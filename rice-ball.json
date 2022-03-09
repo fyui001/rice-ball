@@ -1,0 +1,13 @@
+{
+  "dirs": [
+    "tests/Example"
+  ],
+  "extensions": [
+    "ts",
+    "js",
+    "php",
+    "py",
+    "scss",
+    "css"
+  ]
+}
