@@ -30,7 +30,7 @@ export default class Finder {
     const regex = /rice-ball+( )+(start|line|file)( )+(?<flag>[a-z0-9_\-=]*)/g
     let result
     const file = fs.readFileSync(filePath.getValue(), { encoding: 'utf8' })
-    if ((result = regex.exec(file) as RegExpType | null) !== null) {
+    while ((result = regex.exec(file) as RegExpType | null) !== null) {
       this.flagList.push(new Flag(result.groups.flag))
       if (this.targetFileList[result.groups.flag] === undefined) {
         this.targetFileList[result.groups.flag] = [filePath.getValue()]

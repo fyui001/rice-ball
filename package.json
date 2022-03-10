@@ -1,7 +1,7 @@
 {
   "name": "rice-ball",
   "author": "fyui001",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tool to remove code based on specific comments from node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

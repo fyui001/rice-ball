@@ -4,12 +4,14 @@ import * as fs from 'fs'
 
 export default class Factory {
   finder: Finder
+  flag: Flag | undefined
 
   public constructor(finder: Finder) {
     this.finder = finder
   }
 
   public async execDelete(selectedFlag: Flag) {
+    this.flag = selectedFlag
     for await (const filePath of this.finder.targetFileList[selectedFlag.getValue()]) {
       const file = fs.readFileSync(filePath, { encoding: 'utf8' })
       if (this.isFileDelete(file)) {
@@ -34,7 +36,7 @@ export default class Factory {
             isDelete = false
           }
           line = ''
-        } else if (this.isIgnoreEnd(line)) {
+        } else if (this.isIgnoreEnd(line) && isIgnore) {
           line = ''
           isIgnore = false
         }
@@ -48,11 +50,11 @@ export default class Factory {
   }
 
   protected isBoxInDeleteStartRegExp(): RegExp {
-    return /rice-ball+( )+(start)( )+(?<flag>[a-z0-9_\-=]*)/g
+    return new RegExp(`rice-ball+( )+(start)( )+(${this.flag?.getValue()})`, 'g')
   }
 
   protected isBoxInDeleteEndRegExp(): RegExp {
-    return /rice-ball+( )+(end)( )+(?<flag>[a-z0-9_\-=]*)/g
+    return new RegExp(`rice-ball+( )+(end)( )+(${this.flag?.getValue()})`, 'g')
   }
 
   protected isIgnoreStart(line: string): boolean {
@@ -66,12 +68,12 @@ export default class Factory {
   }
 
   protected isFileDelete(line: string): boolean {
-    const regex = /rice-ball+( )+(file)( )+(?<flag>[a-z0-9_\-=]*)/g
+    const regex = new RegExp(`rice-ball+( )+(file)( )+(${this.flag?.getValue()})`, 'g')
     return regex.exec(line) !== null
   }
 
   protected isLineDelete(line: string): boolean {
-    const regex = /rice-ball+( )+(line)( )+(?<flag>[a-z0-9_\-=]*)/g
+    const regex = new RegExp(`rice-ball+( )+(line)( )+(${this.flag?.getValue()})`, 'g')
     return regex.exec(line) !== null
   }
 }
