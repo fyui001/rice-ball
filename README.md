@@ -52,7 +52,7 @@ Select the flag and enter to perform rice-ball..
 
 ```
 ? Please choice delete flag. … 
-❯ example_flag
+❯ example-flag
 ```
 
 Execution result.
