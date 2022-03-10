@@ -48,11 +48,11 @@ export default class Factory {
   }
 
   protected isBoxInDeleteStartRegExp(): RegExp {
-    return /rice-ball+( )+(start)( )+(?<flag>[a-z0-9_+=]*)/g
+    return /rice-ball+( )+(start)( )+(?<flag>[a-z0-9_\-=]*)/g
   }
 
   protected isBoxInDeleteEndRegExp(): RegExp {
-    return /rice-ball+( )+(end)( )+(?<flag>[a-z0-9_+=]*)/g
+    return /rice-ball+( )+(end)( )+(?<flag>[a-z0-9_\-=]*)/g
   }
 
   protected isIgnoreStart(line: string): boolean {
@@ -66,12 +66,12 @@ export default class Factory {
   }
 
   protected isFileDelete(line: string): boolean {
-    const regex = /rice-ball+( )+(file)( )+(?<flag>[a-z0-9_+=]*)/g
+    const regex = /rice-ball+( )+(file)( )+(?<flag>[a-z0-9_\-=]*)/g
     return regex.exec(line) !== null
   }
 
   protected isLineDelete(line: string): boolean {
-    const regex = /rice-ball+( )+(line)( )+(?<flag>[a-z0-9_+=]*)/g
+    const regex = /rice-ball+( )+(line)( )+(?<flag>[a-z0-9_\-=]*)/g
     return regex.exec(line) !== null
   }
 }

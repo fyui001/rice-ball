@@ -27,7 +27,7 @@ export default class Finder {
   }
 
   protected async readFile(filePath: File): Promise<void> {
-    const regex = /rice-ball+( )+(start|line|file)( )+(?<flag>[a-z0-9_+=]*)/g
+    const regex = /rice-ball+( )+(start|line|file)( )+(?<flag>[a-z0-9_\-=]*)/g
     let result
     const file = fs.readFileSync(filePath.getValue(), { encoding: 'utf8' })
     if ((result = regex.exec(file) as RegExpType | null) !== null) {
