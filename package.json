@@ -12,8 +12,8 @@
     "prebuild": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "lint": "eslint --ext .ts src",
-    "lint:fix": "eslint --ext .ts src --fix"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "files": [
     "dist"
@@ -24,18 +24,13 @@
     "enquirer": "^2.4.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.19.2",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
-    "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "prettier": "^2.5.1",
-    "typescript": "~6.0.3"
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0"
   }
 }
