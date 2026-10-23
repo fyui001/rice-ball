@@ -20,6 +20,9 @@
   ],
   "repository": "https://github.com/fyui001/rice-ball",
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "enquirer": "^2.4.1"
   },
