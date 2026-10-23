@@ -11,6 +11,8 @@
   "scripts": {
     "prebuild": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
     "build": "tsc",
+    "pretest": "npm run build",
+    "test": "node --test tests/cli.test.mjs",
     "prepublishOnly": "npm run build",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"

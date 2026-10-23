@@ -1,0 +1,13 @@
+html .takada-yuki {
+  font-size: 316px;
+  color: yellow;
+}
+
+html {
+  /* rice-ball start example_flag_css */
+  color: skyblue;
+  /* rice-ball ignore start */
+  font-size: 100px;
+  /* rice-ball end example_flag_css */
+  margin: 10px;
+}
