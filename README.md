@@ -2,6 +2,8 @@
 Tool to remove code based on specific comments from node.js
 
 ## install
+Requires Node.js 20 or later.
+
 ```shell
 yarn add -D rice-ball
 ```
