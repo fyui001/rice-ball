@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": true,
     "declaration": true,
-    "lib": ["ESNext"],
+    "lib": ["ES2023"],
     "types": ["node"],
+    "rootDir": "src",
     "outDir": "dist"
   },
   "include": ["src"]
